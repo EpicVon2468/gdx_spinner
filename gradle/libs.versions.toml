@@ -1,0 +1,13 @@
+[versions]
+kotlin = "2.3.0"
+gdx_spinner = "0.0.0-unstable"
+gdx = "1.14.0"
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+gdx = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdx" }
+gdx-backends-lwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdx" }
+jetBrains-annotations = { module = "org.jetbrains:annotations", version = "26.0.2-1" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
