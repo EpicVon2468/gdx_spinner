@@ -15,6 +15,8 @@ repositories {
 
 dependencies {
 	api(libs.gdx)
+	implementation(libs.protobuf.java)
+	implementation(libs.protobuf.kotlin)
 	compileOnly(libs.jetBrains.annotations)
 	testImplementation(libs.kotlin.test)
 	testImplementation(libs.gdx.backends.lwjgl3)

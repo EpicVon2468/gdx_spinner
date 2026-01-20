@@ -1,0 +1,4 @@
+These sources are generated.
+To re-generate, run: `protoc --proto_path=$(pwd)/protobuf --java_out=$(pwd)/src/main/java --kotlin_out=$(pwd)/src/main/java $(pwd)/protobuf/yarn_spinner.proto` in the project's root directory.
+If you do not have a `protoc` binary installed, please install one yourself.  If you are using Nix or NixOS, you may use the flake in the project's root directory.
+Use of direnv to automagically enable the flake is recommended.
