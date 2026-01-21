@@ -1,0 +1,35 @@
+#! /usr/bin/env bash
+
+function checkOrMake() {
+    if [ ! -d $1 ]; then
+    	mkdir $1
+    fi
+}
+
+function moveCompiled() {
+	local _basename=$(basename $1)
+	local _name=$3
+	local outputDir="$2/out/${_name%\.*}"
+	echo "Moving '$1' to '$outputDir/$_basename'"
+	checkOrMake "$2/out"
+	checkOrMake $outputDir
+	mv $1 "$outputDir/$_basename"
+}
+
+function yscCompile() {
+	local _basename=$(basename $1)
+	echo $_basename
+	_basename=${_basename%\.*}
+	echo $_basename
+	./dotnet-run compile $1
+    if [ $? -eq 0 ]; then
+    	local outDir=$(dirname $1)
+    	moveCompiled "$(pwd)/$_basename-Lines.csv" $outDir $_basename
+    	moveCompiled "$(pwd)/$_basename.yarnc" $outDir $_basename
+    	moveCompiled "$(pwd)/$_basename-Metadata.csv" $outDir $_basename
+    else
+    	echo "Bad compile!"
+    fi
+}
+
+yscCompile $@
