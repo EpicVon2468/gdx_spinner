@@ -1,0 +1,3 @@
+[submodule "dependencies/YarnSpinner-Console"]
+	path = dependencies/YarnSpinner-Console
+	url = https://github.com/YarnSpinnerTool/YarnSpinner-Console

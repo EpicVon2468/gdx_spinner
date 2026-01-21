@@ -2,6 +2,10 @@
   <dictionary name="project">
     <words>
       <w>Madity</w>
+		<!--
+		Come off it IntelliJ, "deserialize" is the typo, not deserialise.
+		-->
+      <w>deserialise</w>
     </words>
   </dictionary>
 </component>

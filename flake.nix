@@ -11,10 +11,12 @@
 			let
 				pkgs = import nixpkgs { inherit system; };
 				protobuf = pkgs.protobuf;
+				dotnet = pkgs.dotnetCorePackages.sdk_9_0-bin;
 			in {
 				devShells.default = pkgs.mkShellNoCC {
         	buildInputs = with pkgs; [
         		protobuf
+        		dotnet
         	];
         };
 			}
