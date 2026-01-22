@@ -10,10 +10,11 @@
 		flake-utils.lib.eachDefaultSystem(system:
 			let
 				pkgs = import nixpkgs { inherit system; };
-				protobuf = pkgs.protobuf;
 				dotnet = pkgs.dotnetCorePackages.sdk_9_0-bin;
 			in {
 				devShells.default = pkgs.mkShellNoCC {
+					# `with THING; ...;` is literally just like Kotlin's `with(THING) { ... }` >.>
+					# How did I not realise that myself?!
         	buildInputs = with pkgs; [
         		protobuf
         		dotnet
